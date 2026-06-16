@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ridge Holdings — Global Community</title>
+    <meta name="description" content="Ridge Holdings — Real estate investment and property management with a global footprint.">
+    <title>Ridge Holdings — Global Property Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
       *, *::before, *::after {
         box-sizing: border-box;
@@ -15,61 +16,66 @@
 
       body {
         font-family: 'Inter', system-ui, -apple-system, sans-serif;
-        background: #0f172a;
-        color: #e2e8f0;
+        background: #f8fafc;
+        color: #1e293b;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
       }
 
+      /* ── Header ── */
       header {
-        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-        border-bottom: 1px solid #1e293b;
-        padding: 1rem 2rem;
+        background: #fff;
+        border-bottom: 1px solid #e2e8f0;
+        padding: 0.875rem 2rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.04);
       }
 
       .logo-group {
         display: flex;
         align-items: center;
-        gap: 0.75rem;
+        gap: 0.6rem;
       }
 
       .logo-icon {
-        width: 40px;
-        height: 40px;
-        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        font-size: 1.1rem;
-        color: #fff;
+        width: 36px;
+        height: 36px;
+        position: relative;
+      }
+
+      .logo-icon svg {
+        width: 100%;
+        height: 100%;
       }
 
       .logo-text {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
         font-weight: 700;
-        color: #f8fafc;
+        color: #0f2b5b;
         letter-spacing: -0.02em;
       }
 
       .logo-text span {
-        color: #60a5fa;
+        font-weight: 400;
+        color: #2563eb;
       }
 
       nav {
         display: flex;
-        gap: 1.5rem;
+        align-items: center;
+        gap: 1.75rem;
       }
 
       nav a {
-        color: #94a3b8;
+        color: #475569;
         text-decoration: none;
         font-size: 0.875rem;
         font-weight: 500;
@@ -77,64 +83,163 @@
       }
 
       nav a:hover {
-        color: #e2e8f0;
+        color: #2563eb;
       }
 
+      .nav-cta {
+        background: #2563eb;
+        color: #fff !important;
+        padding: 0.5rem 1.1rem;
+        border-radius: 6px;
+        font-weight: 600;
+        transition: background 0.2s;
+      }
+
+      .nav-cta:hover {
+        background: #1d4ed8 !important;
+        color: #fff !important;
+      }
+
+      /* ── Hero ── */
       .hero {
+        background: linear-gradient(135deg, #0f2b5b 0%, #1e40af 50%, #2563eb 100%);
+        padding: 4rem 2rem 3rem;
         text-align: center;
-        padding: 3rem 2rem 1.5rem;
-        background: linear-gradient(180deg, #0f172a 0%, #1a1f3a 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -25%;
+        width: 150%;
+        height: 200%;
+        background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.05) 0%, transparent 60%);
+        pointer-events: none;
+      }
+
+      .hero-badge {
+        display: inline-block;
+        background: rgba(255,255,255,0.12);
+        border: 1px solid rgba(255,255,255,0.2);
+        color: #bfdbfe;
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.35rem 0.9rem;
+        border-radius: 100px;
+        margin-bottom: 1.25rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
       }
 
       .hero h1 {
-        font-size: 2.25rem;
-        font-weight: 700;
-        color: #f8fafc;
+        font-size: 2.75rem;
+        font-weight: 800;
+        color: #fff;
         margin-bottom: 0.75rem;
         letter-spacing: -0.03em;
+        line-height: 1.15;
+        position: relative;
       }
 
       .hero p {
-        font-size: 1.05rem;
-        color: #94a3b8;
-        max-width: 560px;
+        font-size: 1.1rem;
+        color: #bfdbfe;
+        max-width: 600px;
         margin: 0 auto;
-        line-height: 1.6;
+        line-height: 1.7;
+        position: relative;
       }
 
+      /* ── Stats ── */
       .stats-bar {
         display: flex;
         justify-content: center;
-        gap: 2.5rem;
-        padding: 1.25rem 2rem;
-        background: #1e293b;
-        border-top: 1px solid #334155;
-        border-bottom: 1px solid #334155;
+        gap: 3rem;
+        padding: 1.5rem 2rem;
+        background: #fff;
+        border-bottom: 1px solid #e2e8f0;
         flex-wrap: wrap;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.04);
       }
 
       .stat {
         text-align: center;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .stat-icon {
+        width: 38px;
+        height: 38px;
+        background: #eff6ff;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .stat-icon svg {
+        width: 18px;
+        height: 18px;
+        color: #2563eb;
+      }
+
+      .stat-content {
+        text-align: left;
       }
 
       .stat-value {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
         font-weight: 700;
-        color: #60a5fa;
+        color: #0f2b5b;
+        line-height: 1.2;
       }
 
       .stat-label {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         color: #64748b;
         text-transform: uppercase;
-        letter-spacing: 0.08em;
-        margin-top: 0.15rem;
+        letter-spacing: 0.06em;
+      }
+
+      /* ── Map Section ── */
+      .map-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .map-header {
+        padding: 1.5rem 2rem 0.75rem;
+        background: #f8fafc;
+      }
+
+      .map-header h2 {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #0f2b5b;
+      }
+
+      .map-header p {
+        font-size: 0.85rem;
+        color: #64748b;
+        margin-top: 0.2rem;
       }
 
       .map-container {
         flex: 1;
         position: relative;
-        min-height: 500px;
+        min-height: 520px;
+        margin: 0 2rem 2rem;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+        border: 1px solid #e2e8f0;
       }
 
       #map {
@@ -145,44 +250,76 @@
         left: 0;
       }
 
+      /* ── Footer ── */
       footer {
-        background: #0f172a;
-        border-top: 1px solid #1e293b;
-        padding: 1.25rem 2rem;
-        text-align: center;
-        font-size: 0.8rem;
-        color: #475569;
+        background: #0f2b5b;
+        padding: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
       }
 
-      footer a {
-        color: #60a5fa;
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .footer-brand svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .footer-brand span {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #bfdbfe;
+      }
+
+      .footer-copy {
+        font-size: 0.78rem;
+        color: #64748b;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 1.25rem;
+      }
+
+      .footer-links a {
+        color: #94a3b8;
         text-decoration: none;
+        font-size: 0.8rem;
+        transition: color 0.2s;
       }
 
-      footer a:hover {
-        text-decoration: underline;
+      .footer-links a:hover {
+        color: #bfdbfe;
       }
 
+      /* ── InfoWindow ── */
       .gm-style-iw-d {
         overflow: hidden !important;
       }
 
       .info-window {
         font-family: 'Inter', system-ui, sans-serif;
-        padding: 4px 2px;
+        padding: 6px 4px;
       }
 
       .info-window .iw-handle {
         font-weight: 600;
         font-size: 0.95rem;
-        color: #1e293b;
+        color: #0f2b5b;
       }
 
       .info-window .iw-link {
         display: inline-block;
         margin-top: 4px;
         font-size: 0.8rem;
-        color: #3b82f6;
+        color: #2563eb;
         text-decoration: none;
       }
 
@@ -190,29 +327,67 @@
         text-decoration: underline;
       }
 
-      @media (max-width: 640px) {
+      /* ── Responsive ── */
+      @media (max-width: 768px) {
+        .hero {
+          padding: 2.5rem 1.25rem 2rem;
+        }
+
         .hero h1 {
-          font-size: 1.5rem;
+          font-size: 1.75rem;
         }
 
         .hero p {
           font-size: 0.95rem;
         }
 
-        .hero {
-          padding: 2rem 1.25rem 1rem;
-        }
-
         header {
           padding: 0.75rem 1rem;
         }
 
+        nav {
+          gap: 1rem;
+        }
+
         .stats-bar {
           gap: 1.5rem;
+          padding: 1.25rem 1rem;
         }
 
         .map-container {
           min-height: 400px;
+          margin: 0 1rem 1rem;
+        }
+
+        .map-header {
+          padding: 1.25rem 1rem 0.5rem;
+        }
+
+        footer {
+          flex-direction: column;
+          text-align: center;
+          padding: 1.5rem 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 1.4rem;
+        }
+
+        .stat {
+          flex-direction: column;
+          gap: 0.25rem;
+        }
+
+        .stat-content {
+          text-align: center;
+        }
+
+        .map-container {
+          min-height: 320px;
+          margin: 0 0.5rem 0.5rem;
+          border-radius: 8px;
         }
       }
     </style>
@@ -223,19 +398,21 @@
       function initialize() {
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 2,
-          center: new google.maps.LatLng(20, 0),
+          center: new google.maps.LatLng(25, 0),
           mapTypeId: 'terrain',
           styles: [
-            { elementType: 'geometry', stylers: [{ color: '#1a1a2e' }] },
-            { elementType: 'labels.text.stroke', stylers: [{ color: '#1a1a2e' }] },
-            { elementType: 'labels.text.fill', stylers: [{ color: '#8899aa' }] },
-            { featureType: 'administrative', elementType: 'geometry.stroke', stylers: [{ color: '#334155' }] },
-            { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#0c1222' }] },
-            { featureType: 'water', elementType: 'labels.text.fill', stylers: [{ color: '#4a5568' }] },
+            { elementType: 'geometry', stylers: [{ color: '#eef2f7' }] },
+            { elementType: 'labels.text.fill', stylers: [{ color: '#6b7b8d' }] },
+            { elementType: 'labels.text.stroke', stylers: [{ color: '#ffffff' }] },
+            { featureType: 'administrative', elementType: 'geometry.stroke', stylers: [{ color: '#c8d6e5' }] },
+            { featureType: 'administrative.country', elementType: 'labels.text.fill', stylers: [{ color: '#94a3b8' }] },
+            { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#d4e5f7' }] },
+            { featureType: 'water', elementType: 'labels.text.fill', stylers: [{ color: '#8facc8' }] },
             { featureType: 'road', stylers: [{ visibility: 'off' }] },
             { featureType: 'poi', stylers: [{ visibility: 'off' }] },
             { featureType: 'transit', stylers: [{ visibility: 'off' }] },
-            { featureType: 'landscape.natural', elementType: 'geometry', stylers: [{ color: '#1e293b' }] }
+            { featureType: 'landscape.natural', elementType: 'geometry', stylers: [{ color: '#e8eff5' }] },
+            { featureType: 'landscape.man_made', elementType: 'geometry', stylers: [{ color: '#e2ecf5' }] }
           ]
         });
 
@@ -257,10 +434,10 @@
             map: map,
             icon: {
               path: google.maps.SymbolPath.CIRCLE,
-              fillColor: '#60a5fa',
-              fillOpacity: 0.85,
-              strokeColor: '#3b82f6',
-              strokeWeight: 1.5,
+              fillColor: '#2563eb',
+              fillOpacity: 0.9,
+              strokeColor: '#1e40af',
+              strokeWeight: 2,
               scale: 7
             },
             title: username
@@ -291,42 +468,83 @@
   <body>
     <header>
       <div class="logo-group">
-        <div class="logo-icon">RH</div>
-        <div class="logo-text">Ridge<span>Holdings</span></div>
+        <div class="logo-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#0f2b5b"/>
+            <path d="M8 26L18 8L28 26H8Z" fill="none" stroke="#60a5fa" stroke-width="2.2" stroke-linejoin="round"/>
+            <path d="M13 26L18 16L23 26" fill="none" stroke="#93c5fd" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="logo-text">Ridge <span>Holdings</span></div>
       </div>
       <nav>
-        <a href="#">Community</a>
+        <a href="#">Properties</a>
+        <a href="#">Investments</a>
         <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="#" class="nav-cta">Contact Us</a>
       </nav>
     </header>
 
     <section class="hero">
-      <h1>Our Global Community</h1>
-      <p>Meet contributors from around the world who are building and learning together on GitHub.</p>
+      <div class="hero-badge">Real Estate &middot; Investment &middot; Development</div>
+      <h1>Building Value Across<br>Global Markets</h1>
+      <p>Ridge Holdings invests in and manages premium real estate across the world. Explore our growing network of properties and partners below.</p>
     </section>
 
     <div class="stats-bar">
       <div class="stat">
-        <div class="stat-value" id="contributor-count">&mdash;</div>
-        <div class="stat-label">Contributors</div>
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <div class="stat-content">
+          <div class="stat-value" id="contributor-count">&mdash;</div>
+          <div class="stat-label">Locations</div>
+        </div>
       </div>
       <div class="stat">
-        <div class="stat-value">30+</div>
-        <div class="stat-label">Countries</div>
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div class="stat-content">
+          <div class="stat-value">30+</div>
+          <div class="stat-label">Countries</div>
+        </div>
       </div>
       <div class="stat">
-        <div class="stat-value">Open</div>
-        <div class="stat-label">Source</div>
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+        </div>
+        <div class="stat-content">
+          <div class="stat-value">Premium</div>
+          <div class="stat-label">Properties</div>
+        </div>
       </div>
     </div>
 
-    <div class="map-container">
-      <div id="map"></div>
+    <div class="map-section">
+      <div class="map-header">
+        <h2>Our Global Footprint</h2>
+        <p>Click any marker to learn more about the people behind our portfolio.</p>
+      </div>
+      <div class="map-container">
+        <div id="map"></div>
+      </div>
     </div>
 
     <footer>
-      &copy; 2026 Ridge Holdings &mdash; Powered by <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
+      <div class="footer-brand">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 26L18 8L28 26H8Z" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M13 26L18 16L23 26" fill="none" stroke="#93c5fd" stroke-width="1.6" stroke-linejoin="round"/>
+        </svg>
+        <span>Ridge Holdings</span>
+      </div>
+      <div class="footer-copy">&copy; 2026 Ridge Holdings. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="https://ridgeholdings.org" target="_blank" rel="noopener">ridgeholdings.org</a>
+      </div>
     </footer>
 
     <script async defer
