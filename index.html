@@ -3,108 +3,114 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ridge Holdings — Real estate investment and property management with a global footprint.">
-    <title>Ridge Holdings — Global Property Portfolio</title>
+    <meta name="description" content="Skyview Ridge Holdings LLC — A privately held investment and asset management company dedicated to long-term capital preservation and strategic growth through income-producing real estate.">
+    <title>Skyview Ridge Holdings — Investment &amp; Asset Management</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <style>
-      *, *::before, *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      :root {
+        --navy: #0a1e3d;
+        --navy-light: #112d5a;
+        --blue: #1a6dd4;
+        --blue-accent: #3b8ef5;
+        --blue-pale: #e8f1fc;
+        --gold: #c9a84c;
+        --gold-light: #e6d59a;
+        --slate: #475569;
+        --slate-light: #94a3b8;
+        --off-white: #f7f9fc;
+        --white: #ffffff;
+        --border: #e2e8f0;
       }
 
+      html { scroll-behavior: smooth; }
+
       body {
-        font-family: 'Inter', system-ui, -apple-system, sans-serif;
-        background: #f8fafc;
+        font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+        background: var(--off-white);
         color: #1e293b;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
+        -webkit-font-smoothing: antialiased;
       }
 
       /* ── Header ── */
       header {
-        background: #fff;
-        border-bottom: 1px solid #e2e8f0;
-        padding: 0.875rem 2rem;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        padding: 0 2.5rem;
+        height: 64px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 1rem;
         position: sticky;
         top: 0;
         z-index: 100;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        box-shadow: 0 1px 4px rgba(0,0,0,0.04);
       }
 
       .logo-group {
         display: flex;
         align-items: center;
-        gap: 0.6rem;
+        gap: 0.65rem;
+        text-decoration: none;
       }
 
-      .logo-icon {
-        width: 36px;
-        height: 36px;
-        position: relative;
+      .logo-mark {
+        width: 34px;
+        height: 34px;
       }
 
-      .logo-icon svg {
-        width: 100%;
-        height: 100%;
+      .logo-wordmark {
+        font-family: 'DM Serif Display', serif;
+        font-size: 1.15rem;
+        color: var(--navy);
+        letter-spacing: -0.01em;
       }
 
-      .logo-text {
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: #0f2b5b;
-        letter-spacing: -0.02em;
-      }
-
-      .logo-text span {
-        font-weight: 400;
-        color: #2563eb;
+      .logo-wordmark .accent {
+        color: var(--blue);
       }
 
       nav {
         display: flex;
         align-items: center;
-        gap: 1.75rem;
+        gap: 2rem;
       }
 
       nav a {
-        color: #475569;
+        color: var(--slate);
         text-decoration: none;
-        font-size: 0.875rem;
+        font-size: 0.85rem;
         font-weight: 500;
+        letter-spacing: 0.01em;
         transition: color 0.2s;
       }
 
-      nav a:hover {
-        color: #2563eb;
-      }
+      nav a:hover { color: var(--blue); }
 
       .nav-cta {
-        background: #2563eb;
-        color: #fff !important;
-        padding: 0.5rem 1.1rem;
+        background: var(--navy);
+        color: var(--white) !important;
+        padding: 0.5rem 1.25rem;
         border-radius: 6px;
         font-weight: 600;
+        font-size: 0.82rem;
+        letter-spacing: 0.02em;
         transition: background 0.2s;
       }
 
-      .nav-cta:hover {
-        background: #1d4ed8 !important;
-        color: #fff !important;
-      }
+      .nav-cta:hover { background: var(--navy-light) !important; }
+
+      .mobile-menu { display: none; background: none; border: none; cursor: pointer; }
 
       /* ── Hero ── */
       .hero {
-        background: linear-gradient(135deg, #0f2b5b 0%, #1e40af 50%, #2563eb 100%);
-        padding: 4rem 2rem 3rem;
-        text-align: center;
+        background: linear-gradient(160deg, var(--navy) 0%, #0d2a52 40%, var(--navy-light) 100%);
+        padding: 5.5rem 2.5rem 4.5rem;
         position: relative;
         overflow: hidden;
       }
@@ -112,134 +118,293 @@
       .hero::before {
         content: '';
         position: absolute;
-        top: -50%;
-        left: -25%;
-        width: 150%;
-        height: 200%;
-        background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.05) 0%, transparent 60%);
+        top: 0; right: 0;
+        width: 55%;
+        height: 100%;
+        background: radial-gradient(ellipse at 70% 40%, rgba(26,109,212,0.12) 0%, transparent 65%);
         pointer-events: none;
       }
 
+      .hero::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+      }
+
+      .hero-inner {
+        max-width: 720px;
+        position: relative;
+      }
+
       .hero-badge {
-        display: inline-block;
-        background: rgba(255,255,255,0.12);
-        border: 1px solid rgba(255,255,255,0.2);
-        color: #bfdbfe;
-        font-size: 0.75rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(201,168,76,0.12);
+        border: 1px solid rgba(201,168,76,0.25);
+        color: var(--gold-light);
+        font-size: 0.7rem;
         font-weight: 600;
-        padding: 0.35rem 0.9rem;
+        padding: 0.4rem 1rem;
         border-radius: 100px;
-        margin-bottom: 1.25rem;
-        letter-spacing: 0.04em;
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
       }
 
       .hero h1 {
-        font-size: 2.75rem;
-        font-weight: 800;
-        color: #fff;
-        margin-bottom: 0.75rem;
-        letter-spacing: -0.03em;
-        line-height: 1.15;
-        position: relative;
+        font-family: 'DM Serif Display', serif;
+        font-size: 3.25rem;
+        font-weight: 400;
+        color: var(--white);
+        margin-bottom: 1.25rem;
+        letter-spacing: -0.02em;
+        line-height: 1.12;
       }
 
-      .hero p {
+      .hero h1 em {
+        font-style: normal;
+        color: var(--blue-accent);
+      }
+
+      .hero-subtitle {
         font-size: 1.1rem;
-        color: #bfdbfe;
-        max-width: 600px;
-        margin: 0 auto;
+        color: var(--slate-light);
+        max-width: 560px;
         line-height: 1.7;
-        position: relative;
+        margin-bottom: 2rem;
       }
 
-      /* ── Stats ── */
-      .stats-bar {
+      .hero-actions {
         display: flex;
-        justify-content: center;
-        gap: 3rem;
-        padding: 1.5rem 2rem;
-        background: #fff;
-        border-bottom: 1px solid #e2e8f0;
+        gap: 1rem;
         flex-wrap: wrap;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.04);
       }
 
-      .stat {
-        text-align: center;
-        display: flex;
+      .btn {
+        display: inline-flex;
         align-items: center;
-        gap: 0.6rem;
+        gap: 0.4rem;
+        padding: 0.7rem 1.5rem;
+        border-radius: 6px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s;
+        border: none;
+        cursor: pointer;
       }
 
-      .stat-icon {
-        width: 38px;
-        height: 38px;
-        background: #eff6ff;
+      .btn-primary {
+        background: var(--blue);
+        color: var(--white);
+      }
+
+      .btn-primary:hover { background: var(--blue-accent); }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--white);
+        border: 1px solid rgba(255,255,255,0.2);
+      }
+
+      .btn-outline:hover {
+        border-color: rgba(255,255,255,0.4);
+        background: rgba(255,255,255,0.05);
+      }
+
+      /* ── About / Mission ── */
+      .about {
+        padding: 4.5rem 2.5rem;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .about-inner {
+        max-width: 1080px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .about-label {
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--blue);
+        margin-bottom: 0.75rem;
+      }
+
+      .about h2 {
+        font-family: 'DM Serif Display', serif;
+        font-size: 2rem;
+        color: var(--navy);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+      }
+
+      .about p {
+        font-size: 0.95rem;
+        color: var(--slate);
+        line-height: 1.75;
+        margin-bottom: 0.75rem;
+      }
+
+      .about-values {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+      }
+
+      .value-card {
+        background: var(--off-white);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 1.25rem;
+      }
+
+      .value-card .vc-icon {
+        width: 36px;
+        height: 36px;
+        background: var(--blue-pale);
         border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-shrink: 0;
+        margin-bottom: 0.65rem;
       }
 
-      .stat-icon svg {
+      .value-card .vc-icon svg {
         width: 18px;
         height: 18px;
-        color: #2563eb;
+        color: var(--blue);
       }
 
-      .stat-content {
-        text-align: left;
-      }
-
-      .stat-value {
-        font-size: 1.35rem;
+      .value-card h3 {
+        font-size: 0.85rem;
         font-weight: 700;
-        color: #0f2b5b;
-        line-height: 1.2;
+        color: var(--navy);
+        margin-bottom: 0.25rem;
       }
 
-      .stat-label {
-        font-size: 0.7rem;
-        color: #64748b;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
+      .value-card p {
+        font-size: 0.78rem;
+        color: var(--slate-light);
+        line-height: 1.55;
+        margin-bottom: 0;
+      }
+
+      /* ── Services ── */
+      .services {
+        padding: 4.5rem 2.5rem;
+        background: var(--off-white);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .services-inner {
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .section-header .about-label { margin-bottom: 0.5rem; }
+
+      .section-header h2 {
+        font-family: 'DM Serif Display', serif;
+        font-size: 2rem;
+        color: var(--navy);
+        letter-spacing: -0.01em;
+        margin-bottom: 0.5rem;
+      }
+
+      .section-header p {
+        font-size: 0.92rem;
+        color: var(--slate);
+        max-width: 520px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+
+      .service-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 2rem 1.5rem;
+        transition: box-shadow 0.25s, border-color 0.25s;
+      }
+
+      .service-card:hover {
+        box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+        border-color: #c8d8ec;
+      }
+
+      .service-card .sc-icon {
+        width: 44px;
+        height: 44px;
+        background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.1rem;
+      }
+
+      .service-card .sc-icon svg {
+        width: 22px;
+        height: 22px;
+        color: var(--blue-accent);
+      }
+
+      .service-card h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 0.5rem;
+      }
+
+      .service-card p {
+        font-size: 0.85rem;
+        color: var(--slate);
+        line-height: 1.65;
       }
 
       /* ── Map Section ── */
       .map-section {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
+        padding: 4.5rem 2.5rem 3rem;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
       }
 
-      .map-header {
-        padding: 1.5rem 2rem 0.75rem;
-        background: #f8fafc;
-      }
-
-      .map-header h2 {
-        font-size: 1.15rem;
-        font-weight: 700;
-        color: #0f2b5b;
-      }
-
-      .map-header p {
-        font-size: 0.85rem;
-        color: #64748b;
-        margin-top: 0.2rem;
+      .map-section-inner {
+        max-width: 1080px;
+        margin: 0 auto;
       }
 
       .map-container {
-        flex: 1;
         position: relative;
-        min-height: 520px;
-        margin: 0 2rem 2rem;
+        height: 520px;
+        margin-top: 2rem;
         border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
-        border: 1px solid #e2e8f0;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.03);
+        border: 1px solid var(--border);
       }
 
       #map {
@@ -250,145 +415,240 @@
         left: 0;
       }
 
+      /* ── Contact ── */
+      .contact {
+        padding: 4rem 2.5rem;
+        background: var(--off-white);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .contact-inner {
+        max-width: 680px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .contact h2 {
+        font-family: 'DM Serif Display', serif;
+        font-size: 1.75rem;
+        color: var(--navy);
+        margin-bottom: 0.75rem;
+      }
+
+      .contact > .contact-inner > p {
+        font-size: 0.92rem;
+        color: var(--slate);
+        line-height: 1.6;
+        margin-bottom: 2rem;
+      }
+
+      .contact-cards {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .contact-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 1.5rem 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+        transition: box-shadow 0.2s, border-color 0.2s;
+        min-width: 260px;
+      }
+
+      .contact-card:hover {
+        box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        border-color: #c8d8ec;
+      }
+
+      .contact-card .cc-icon {
+        width: 42px;
+        height: 42px;
+        background: var(--blue-pale);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .contact-card .cc-icon svg {
+        width: 20px;
+        height: 20px;
+        color: var(--blue);
+      }
+
+      .contact-card .cc-text {
+        text-align: left;
+      }
+
+      .contact-card .cc-label {
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--slate-light);
+      }
+
+      .contact-card .cc-value {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--navy);
+        margin-top: 0.1rem;
+      }
+
       /* ── Footer ── */
       footer {
-        background: #0f2b5b;
-        padding: 2rem;
+        background: var(--navy);
+        padding: 3rem 2.5rem 2rem;
+      }
+
+      .footer-inner {
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+
+      .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        margin-bottom: 1.5rem;
+      }
+
+      .footer-brand-block .fb-name {
+        font-family: 'DM Serif Display', serif;
+        font-size: 1.1rem;
+        color: var(--white);
+        margin-bottom: 0.4rem;
+      }
+
+      .footer-brand-block .fb-desc {
+        font-size: 0.8rem;
+        color: var(--slate-light);
+        max-width: 300px;
+        line-height: 1.55;
+      }
+
+      .footer-nav {
+        display: flex;
+        gap: 3rem;
+      }
+
+      .footer-nav-col h4 {
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--slate-light);
+        margin-bottom: 0.75rem;
+      }
+
+      .footer-nav-col a {
+        display: block;
+        color: #cbd5e1;
+        text-decoration: none;
+        font-size: 0.83rem;
+        margin-bottom: 0.45rem;
+        transition: color 0.2s;
+      }
+
+      .footer-nav-col a:hover { color: var(--white); }
+
+      .footer-bottom {
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-        gap: 1rem;
-      }
-
-      .footer-brand {
-        display: flex;
-        align-items: center;
         gap: 0.5rem;
       }
 
-      .footer-brand svg {
-        width: 24px;
-        height: 24px;
-      }
-
-      .footer-brand span {
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: #bfdbfe;
-      }
-
       .footer-copy {
-        font-size: 0.78rem;
-        color: #64748b;
+        font-size: 0.75rem;
+        color: var(--slate-light);
       }
 
-      .footer-links {
+      .footer-legal {
         display: flex;
         gap: 1.25rem;
       }
 
-      .footer-links a {
-        color: #94a3b8;
+      .footer-legal a {
+        font-size: 0.75rem;
+        color: var(--slate-light);
         text-decoration: none;
-        font-size: 0.8rem;
         transition: color 0.2s;
       }
 
-      .footer-links a:hover {
-        color: #bfdbfe;
-      }
+      .footer-legal a:hover { color: #cbd5e1; }
 
       /* ── InfoWindow ── */
-      .gm-style-iw-d {
-        overflow: hidden !important;
-      }
+      .gm-style-iw-d { overflow: hidden !important; }
 
       .info-window {
-        font-family: 'Inter', system-ui, sans-serif;
+        font-family: 'DM Sans', system-ui, sans-serif;
         padding: 6px 4px;
       }
 
       .info-window .iw-handle {
         font-weight: 600;
         font-size: 0.95rem;
-        color: #0f2b5b;
+        color: var(--navy);
       }
 
       .info-window .iw-link {
         display: inline-block;
         margin-top: 4px;
         font-size: 0.8rem;
-        color: #2563eb;
+        color: var(--blue);
         text-decoration: none;
       }
 
-      .info-window .iw-link:hover {
-        text-decoration: underline;
-      }
+      .info-window .iw-link:hover { text-decoration: underline; }
 
       /* ── Responsive ── */
+      @media (max-width: 900px) {
+        .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+        .services-grid { grid-template-columns: 1fr 1fr; }
+      }
+
       @media (max-width: 768px) {
-        .hero {
-          padding: 2.5rem 1.25rem 2rem;
-        }
+        header { padding: 0 1.25rem; }
 
-        .hero h1 {
-          font-size: 1.75rem;
-        }
+        nav a:not(.nav-cta) { display: none; }
 
-        .hero p {
-          font-size: 0.95rem;
-        }
+        .hero { padding: 3.5rem 1.5rem 3rem; }
+        .hero h1 { font-size: 2.25rem; }
+        .hero-subtitle { font-size: 1rem; }
 
-        header {
-          padding: 0.75rem 1rem;
-        }
+        .about, .services, .map-section, .contact { padding: 3rem 1.5rem; }
 
-        nav {
-          gap: 1rem;
-        }
+        .services-grid { grid-template-columns: 1fr; }
 
-        .stats-bar {
-          gap: 1.5rem;
-          padding: 1.25rem 1rem;
-        }
+        .map-container { height: 400px; }
 
-        .map-container {
-          min-height: 400px;
-          margin: 0 1rem 1rem;
-        }
+        .contact-cards { flex-direction: column; align-items: center; }
 
-        .map-header {
-          padding: 1.25rem 1rem 0.5rem;
-        }
-
-        footer {
-          flex-direction: column;
-          text-align: center;
-          padding: 1.5rem 1rem;
-        }
+        .footer-top { flex-direction: column; }
+        .footer-nav { gap: 2rem; }
+        .footer-bottom { flex-direction: column; text-align: center; }
       }
 
       @media (max-width: 480px) {
-        .hero h1 {
-          font-size: 1.4rem;
-        }
-
-        .stat {
-          flex-direction: column;
-          gap: 0.25rem;
-        }
-
-        .stat-content {
-          text-align: center;
-        }
-
-        .map-container {
-          min-height: 320px;
-          margin: 0 0.5rem 0.5rem;
-          border-radius: 8px;
-        }
+        .hero h1 { font-size: 1.75rem; }
+        .hero-subtitle { font-size: 0.9rem; }
+        .about-values { grid-template-columns: 1fr; }
+        .map-container { height: 320px; margin-top: 1.25rem; }
+        .contact-card { min-width: auto; width: 100%; }
       }
     </style>
     <script>
@@ -422,8 +682,6 @@
       }
 
       window.eqfeed_callback = function(results) {
-        var bounds = new google.maps.LatLngBounds();
-
         for (var i = 0; i < results.features.length; i++) {
           var coords = results.features[i].geometry.coordinates;
           var username = results.features[i].properties.username || 'contributor';
@@ -434,16 +692,15 @@
             map: map,
             icon: {
               path: google.maps.SymbolPath.CIRCLE,
-              fillColor: '#2563eb',
+              fillColor: '#1a6dd4',
               fillOpacity: 0.9,
-              strokeColor: '#1e40af',
-              strokeWeight: 2,
-              scale: 7
+              strokeColor: '#0a1e3d',
+              strokeWeight: 1.5,
+              scale: 6
             },
             title: username
           });
 
-          bounds.extend(latLng);
           markerCount++;
 
           (function(marker, username) {
@@ -460,90 +717,192 @@
           })(marker, username);
         }
 
-        var countEl = document.getElementById('contributor-count');
+        var countEl = document.getElementById('location-count');
         if (countEl) countEl.textContent = markerCount.toLocaleString();
       }
     </script>
   </head>
   <body>
     <header>
-      <div class="logo-group">
-        <div class="logo-icon">
-          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="36" height="36" rx="8" fill="#0f2b5b"/>
-            <path d="M8 26L18 8L28 26H8Z" fill="none" stroke="#60a5fa" stroke-width="2.2" stroke-linejoin="round"/>
-            <path d="M13 26L18 16L23 26" fill="none" stroke="#93c5fd" stroke-width="1.8" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="logo-text">Ridge <span>Holdings</span></div>
-      </div>
+      <a class="logo-group" href="#">
+        <svg class="logo-mark" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="34" height="34" rx="7" fill="#0a1e3d"/>
+          <path d="M7 25L17 7L27 25" fill="none" stroke="#3b8ef5" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M11 25L17 13L23 25" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round" opacity="0.7"/>
+        </svg>
+        <div class="logo-wordmark">Skyview Ridge <span class="accent">Holdings</span></div>
+      </a>
       <nav>
-        <a href="#">Properties</a>
-        <a href="#">Investments</a>
-        <a href="#">About</a>
-        <a href="#" class="nav-cta">Contact Us</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact" class="nav-cta">Get in Touch</a>
       </nav>
     </header>
 
+    <!-- Hero -->
     <section class="hero">
-      <div class="hero-badge">Real Estate &middot; Investment &middot; Development</div>
-      <h1>Building Value Across<br>Global Markets</h1>
-      <p>Ridge Holdings invests in and manages premium real estate across the world. Explore our growing network of properties and partners below.</p>
+      <div class="hero-inner">
+        <div class="hero-badge">Investment &middot; Asset Management &middot; Real Estate</div>
+        <h1>Capital Preservation Through <em>Strategic Real Estate</em></h1>
+        <p class="hero-subtitle">Skyview Ridge Holdings is a privately held investment and asset management company dedicated to long-term capital preservation and strategic growth through income-producing real estate and select private investments.</p>
+        <div class="hero-actions">
+          <a href="#services" class="btn btn-primary">Our Approach &darr;</a>
+          <a href="#contact" class="btn btn-outline">Contact Us</a>
+        </div>
+      </div>
     </section>
 
-    <div class="stats-bar">
-      <div class="stat">
-        <div class="stat-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="about-inner">
+        <div>
+          <div class="about-label">Who We Are</div>
+          <h2>Building Durable Value Across Markets</h2>
+          <p>We acquire and manage income-producing real estate and select private investments in markets with strong fundamentals and sustainable demand.</p>
+          <p>Our approach emphasizes rigorous underwriting, comprehensive risk management, and operational efficiency to deliver consistent, durable cash flow and asset appreciation.</p>
+          <p>We operate with a long-term ownership mindset, building a diversified portfolio designed for stability, performance, and generational continuity.</p>
         </div>
-        <div class="stat-content">
-          <div class="stat-value" id="contributor-count">&mdash;</div>
-          <div class="stat-label">Locations</div>
+        <div class="about-values">
+          <div class="value-card">
+            <div class="vc-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h3>Capital Preservation</h3>
+            <p>Protecting principal through disciplined investment selection and risk management.</p>
+          </div>
+          <div class="value-card">
+            <div class="vc-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            </div>
+            <h3>Strategic Growth</h3>
+            <p>Identifying opportunities in markets with strong fundamentals and sustainable demand.</p>
+          </div>
+          <div class="value-card">
+            <div class="vc-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <h3>Operational Excellence</h3>
+            <p>Maximizing asset performance through hands-on management and efficiency.</p>
+          </div>
+          <div class="value-card">
+            <div class="vc-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3>Long-Term Mindset</h3>
+            <p>Building a portfolio designed for generational continuity and lasting performance.</p>
+          </div>
         </div>
       </div>
-      <div class="stat">
-        <div class="stat-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <div class="stat-content">
-          <div class="stat-value">30+</div>
-          <div class="stat-label">Countries</div>
-        </div>
-      </div>
-      <div class="stat">
-        <div class="stat-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-        </div>
-        <div class="stat-content">
-          <div class="stat-value">Premium</div>
-          <div class="stat-label">Properties</div>
-        </div>
-      </div>
-    </div>
+    </section>
 
-    <div class="map-section">
-      <div class="map-header">
-        <h2>Our Global Footprint</h2>
-        <p>Click any marker to learn more about the people behind our portfolio.</p>
+    <!-- Services -->
+    <section class="services" id="services">
+      <div class="services-inner">
+        <div class="section-header">
+          <div class="about-label">What We Do</div>
+          <h2>Investment &amp; Asset Management</h2>
+          <p>Rigorous underwriting and comprehensive risk management across every stage of the investment lifecycle.</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="sc-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </div>
+            <h3>Acquisition &amp; Underwriting</h3>
+            <p>Disciplined sourcing and rigorous analysis of income-producing real estate in markets with strong fundamentals, ensuring each investment meets our criteria for risk-adjusted returns.</p>
+          </div>
+          <div class="service-card">
+            <div class="sc-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            </div>
+            <h3>Portfolio Management</h3>
+            <p>Active oversight of a diversified portfolio designed for stability and performance. We monitor market conditions and optimize asset allocation to deliver consistent, durable cash flow.</p>
+          </div>
+          <div class="service-card">
+            <div class="sc-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3>Private Investments</h3>
+            <p>Select private investment opportunities beyond traditional real estate, evaluated with the same rigorous standards and long-term ownership philosophy that define our approach.</p>
+          </div>
+        </div>
       </div>
-      <div class="map-container">
-        <div id="map"></div>
-      </div>
-    </div>
+    </section>
 
+    <!-- Map / Portfolio -->
+    <section class="map-section" id="portfolio">
+      <div class="map-section-inner">
+        <div class="section-header">
+          <div class="about-label">Global Reach</div>
+          <h2>Our Network</h2>
+          <p>Explore <span id="location-count">&mdash;</span> locations across our worldwide community of partners and contributors.</p>
+        </div>
+        <div class="map-container">
+          <div id="map"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+        <div class="about-label">Get in Touch</div>
+        <h2>Let's Start a Conversation</h2>
+        <p>Whether you have an investment opportunity, a partnership proposal, or simply want to learn more about Skyview Ridge Holdings, we'd be glad to hear from you.</p>
+        <div class="contact-cards">
+          <a class="contact-card" href="mailto:info@ridgeholdings.org">
+            <div class="cc-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div class="cc-text">
+              <div class="cc-label">Email</div>
+              <div class="cc-value">info@ridgeholdings.org</div>
+            </div>
+          </a>
+          <a class="contact-card" href="tel:+12402631049">
+            <div class="cc-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            </div>
+            <div class="cc-text">
+              <div class="cc-label">Phone</div>
+              <div class="cc-value">(240) 263-1049</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-      <div class="footer-brand">
-        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8 26L18 8L28 26H8Z" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M13 26L18 16L23 26" fill="none" stroke="#93c5fd" stroke-width="1.6" stroke-linejoin="round"/>
-        </svg>
-        <span>Ridge Holdings</span>
-      </div>
-      <div class="footer-copy">&copy; 2026 Ridge Holdings. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="https://ridgeholdings.org" target="_blank" rel="noopener">ridgeholdings.org</a>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand-block">
+            <div class="fb-name">Skyview Ridge Holdings</div>
+            <div class="fb-desc">A privately held investment and asset management company dedicated to long-term capital preservation and strategic growth.</div>
+          </div>
+          <div class="footer-nav">
+            <div class="footer-nav-col">
+              <h4>Company</h4>
+              <a href="#about">About</a>
+              <a href="#services">Services</a>
+              <a href="#portfolio">Portfolio</a>
+            </div>
+            <div class="footer-nav-col">
+              <h4>Connect</h4>
+              <a href="mailto:info@ridgeholdings.org">Email Us</a>
+              <a href="tel:+12402631049">Call Us</a>
+              <a href="https://ridgeholdings.org" target="_blank" rel="noopener">ridgeholdings.org</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-copy">&copy; 2026 Skyview Ridge Holdings LLC. All rights reserved.</div>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+          </div>
+        </div>
       </div>
     </footer>
 
